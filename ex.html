@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Python com Strings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://wallpaperaccess.com/full/796843.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .exercise-card {
+            background-color: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .exercise-card:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #1a237e;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(26, 35, 126, 0.2);
+            padding-bottom: 10px;
+        }
+
+        pre {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .answer {
+            color: #1a237e;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-voltar {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .btn-voltar:hover {
+            background-color: #45a049;
+        }
+
+        .btn-voltar i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn-voltar">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>1. Contar os Caracteres em uma String</h2>
+            <p>Para contar o número de caracteres em uma string, usamos a função len().</p>
+            <pre>
+# Código em Python
+frase = "Python é incrível"
+numero_de_caracteres = len(frase)
+print(numero_de_caracteres)  # Saída: 16
+            </pre>
+            <p class="answer">Resposta: A frase "Python é incrível" tem 16 caracteres, incluindo o espaço.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>2. Converter String para Maiúsculas</h2>
+            <p>Para converter todos os caracteres de uma string para maiúsculas, usamos o método upper().</p>
+            <pre>
+# Código em Python
+frase = "python é incrível"
+frase_maiuscula = frase.upper()
+print(frase_maiuscula)  # Saída: PYTHON É INCRÍVEL
+            </pre>
+            <p class="answer">Resposta: "PYTHON É INCRÍVEL"</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>3. Converter String para Minúsculas</h2>
+            <p>Para converter todos os caracteres de uma string para minúsculas, usamos o método lower().</p>
+            <pre>
+# Código em Python
+frase = "PYTHON É INCRÍVEL"
+frase_minuscula = frase.lower()
+print(frase_minuscula)  # Saída: python é incrível
+            </pre>
+            <p class="answer">Resposta: "python é incrível"</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>4. Contar Ocorrências de um Caracter</h2>
+            <p>Para contar quantas vezes um determinado caractere aparece em uma string, usamos o método count().</p>
+            <pre>
+# Código em Python
+frase = "Python é incrível"
+contador = frase.count("i")
+print(contador)  # Saída: 2
+            </pre>
+            <p class="answer">Resposta: O caractere "i" aparece 2 vezes na frase.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>5. Verificar se uma Palavra está na Frase</h2>
+            <p>Para verificar se uma palavra existe dentro de uma string, podemos usar o operador in.</p>
+            <pre>
+# Código em Python
+frase = "Python é incrível"
+verifica = "incrível" in frase
+print(verifica)  # Saída: True
+            </pre>
+            <p class="answer">Resposta: "incrível" está presente na frase, então o resultado é True.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>6. Substituir Palavras em uma Frase</h2>
+            <p>Para substituir uma palavra por outra em uma string, usamos o método replace().</p>
+            <pre>
+# Código em Python
+frase = "Python é incrível"
+nova_frase = frase.replace("incrível", "fantástico")
+print(nova_frase)  # Saída: Python é fantástico
+            </pre>
+            <p class="answer">Resposta: A nova frase será "Python é fantástico".</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>7. Reverter uma String</h2>
+            <p>Para reverter uma string, usamos a notação de slice [::-1].</p>
+            <pre>
+# Código em Python
+frase = "Python é incrível"
+frase_revertida = frase[::-1]
+print(frase_revertida)  # Saída: levírcni é nohtyP
+            </pre>
+            <p class="answer">Resposta: A frase revertida será "levírcni é nohtyP".</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>8. Dividir uma Frase em Palavras</h2>
+            <p>Para dividir uma string em palavras, usamos o método split(), que separa a string com base nos espaços.</p>
+            <pre>
+# Código em Python
+frase = "Python é incrível"
+palavras = frase.split()
+print(palavras)  # Saída: ['Python', 'é', 'incrível']
+            </pre>
+            <p class="answer">Resposta: A frase dividida será ['Python', 'é', 'incrível'].</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>9. Capitalizar as Palavras de uma Frase</h2>
+            <p>Para capitalizar a primeira letra de cada palavra, usamos o método title().</p>
+            <pre>
+# Código em Python
+frase = "python é incrível"
+frase_capitalizada = frase.title()
+print(frase_capitalizada)  # Saída: Python É Incrível
+            </pre>
+            <p class="answer">Resposta: A frase capitalizada será "Python É Incrível".</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>10. Remover Espaços em Branco no Início e Fim</h2>
+            <p>Este programa remove espaços em branco do início e fim de uma string.</p>
+            <pre>
+# Código em Python
+texto = input("Digite um texto com espaços no início e fim: ")
+texto_limpo = texto.strip()
+print(f"Texto original: '{texto}'")
+print(f"Texto sem espaços: '{texto_limpo}'")
+            </pre>
+            <p class="answer">Resposta: O programa remove os espaços em branco do início e fim da string usando o método strip().</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>11. Verificar Código do Produto</h2>
+            <p>Este programa verifica se o código do produto segue o formato PROD-XXXX.</p>
+            <pre>
+# Código em Python
+import re
+
+codigo = input("Digite o código do produto (formato PROD-XXXX): ")
+padrao = r'^PROD-[0-9]{4}$'
+
+if re.match(padrao, codigo):
+    print("Código válido!")
+else:
+    print("Código inválido! Use o formato PROD-XXXX (X = dígitos)")
+            </pre>
+            <p class="answer">Resposta: O programa verifica se o código segue o formato PROD-XXXX, onde XXXX são dígitos.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>12. Separar Letras e Números de Placa</h2>
+            <p>Este programa separa as letras e números de uma placa de carro.</p>
+            <pre>
+# Código em Python
+placa = input("Digite a placa do carro (formato ABC-1234): ")
+letras = placa[:3]
+numeros = placa[4:]
+
+print(f"Letras: {letras}")
+print(f"Números: {numeros}")
+            </pre>
+            <p class="answer">Resposta: O programa separa a placa ABC-1234 em letras (ABC) e números (1234).</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>13. Descobrir Senha no Enigma</h2>
+            <p>Este programa descobre a senha escondida em um enigma usando slicing.</p>
+            <pre>
+# Código em Python
+enigma = "Kg8vlk8jIU7D8nNbd0GG4F2aCa4gnb85oÇAcm9aBmc55mnbtBl39Cvbn3"
+senha = enigma[3:-15:5].upper()
+print(f"A senha escondida é: {senha}")
+            </pre>
+            <p class="answer">Resposta: O programa extrai a senha do enigma usando slicing com início em 3, fim em -15 e passo 5.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>14. Acessar Caracter Isolado da String</h2>
+            <p>Este programa acessa caracteres específicos de uma string.</p>
+            <pre>
+# Código em Python
+texto = input("Digite um texto: ")
+posicao = int(input("Digite a posição do caractere que deseja acessar: "))
+
+if 0 <= posicao < len(texto):
+    caractere = texto[posicao]
+    print(f"O caractere na posição {posicao} é: {caractere}")
+else:
+    print("Posição inválida!")
+            </pre>
+            <p class="answer">Resposta: O programa acessa e exibe um caractere específico da string baseado na posição.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>15. Obter Substring Usando Slicing</h2>
+            <p>Este programa extrai uma parte específica de uma string usando slicing.</p>
+            <pre>
+# Código em Python
+texto = input("Digite um texto: ")
+inicio = int(input("Digite a posição inicial: "))
+fim = int(input("Digite a posição final: "))
+
+substring = texto[inicio:fim]
+print(f"Substring extraída: {substring}")
+            </pre>
+            <p class="answer">Resposta: O programa extrai uma substring usando as posições de início e fim especificadas.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>16. Calcular o Perímetro de um Círculo</h2>
+            <p>Este programa calcula o perímetro de um círculo dado seu raio.</p>
+            <pre>
+# Código em Python
+import math
+
+raio = float(input("Digite o raio do círculo: "))
+perimetro = 2 * math.pi * raio
+
+print(f"O perímetro do círculo é: {perimetro:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o perímetro usando a fórmula 2πr.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>17. Calcular Idade em Dias</h2>
+            <p>Este programa calcula a idade em dias.</p>
+            <pre>
+# Código em Python
+anos = int(input("Digite sua idade em anos: "))
+dias = anos * 365
+
+print(f"Você já viveu aproximadamente {dias} dias!")
+            </pre>
+            <p class="answer">Resposta: O programa converte a idade de anos para dias.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>18. Converter Metros para Centímetros</h2>
+            <p>Este programa converte uma medida em metros para centímetros.</p>
+            <pre>
+# Código em Python
+metros = float(input("Digite a medida em metros: "))
+centimetros = metros * 100
+
+print(f"{metros} metros = {centimetros} centímetros")
+            </pre>
+            <p class="answer">Resposta: O programa converte metros para centímetros multiplicando por 100.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>19. Calcular a Área de um Retângulo</h2>
+            <p>Este programa calcula a área de um retângulo.</p>
+            <pre>
+# Código em Python
+base = float(input("Digite a base do retângulo: "))
+altura = float(input("Digite a altura do retângulo: "))
+
+area = base * altura
+print(f"A área do retângulo é: {area}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a área multiplicando base por altura.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>20. Cumprimentar e Conhecer Pessoa</h2>
+            <p>Este programa cumprimenta e interage com o usuário.</p>
+            <pre>
+# Código em Python
+print("Bom dia!")
+nome = input("Qual é o seu nome? ")
+print(f"É um prazer conhecer você, {nome}!")
+            </pre>
+            <p class="answer">Resposta: O programa dá bom dia, pergunta o nome e responde que é um prazer conhecer a pessoa.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>21. História Interativa</h2>
+            <p>Este programa conta uma história que avança com a interação do usuário.</p>
+            <pre>
+# Código em Python
+print("A JORNADA DO PROGRAMADOR")
+input("Pressione Enter para começar...")
+
+print("\nEra uma vez um jovem programador que sonhava em criar o código perfeito.")
+input("Pressione Enter para continuar...")
+
+print("\nTodos os dias, ele estudava e praticava incansavelmente.")
+input("Pressione Enter para continuar...")
+
+print("\nAté que um dia, ele descobriu que a perfeição está na simplicidade do código.")
+input("Pressione Enter para continuar...")
+
+print("\nFim da história!")
+            </pre>
+            <p class="answer">Resposta: O programa conta uma história interativa que avança quando o usuário pressiona Enter.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>22. Calcular Raiz Quadrada</h2>
+            <p>Este programa calcula a raiz quadrada de um número.</p>
+            <pre>
+# Código em Python
+import math
+
+numero = float(input("Digite um número para calcular a raiz quadrada: "))
+raiz = math.sqrt(numero)
+
+print(f"A raiz quadrada de {numero} é {raiz:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula e exibe a raiz quadrada do número fornecido.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>23. Calcular o Dobro</h2>
+            <p>Este programa calcula o dobro de um número.</p>
+            <pre>
+# Código em Python
+numero = float(input("Digite um número: "))
+dobro = numero * 2
+
+print(f"O dobro de {numero} é {dobro}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula e exibe o dobro do número fornecido.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>24. Calcular Potência</h2>
+            <p>Este programa calcula a potência entre dois números.</p>
+            <pre>
+# Código em Python
+a = float(input("Digite o valor de A (base): "))
+b = float(input("Digite o valor de B (expoente): "))
+
+resultado = a ** b
+print(f"{a} elevado a {b} é igual a {resultado}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a potência usando os valores fornecidos como base e expoente.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>25. Converter Segundos</h2>
+            <p>Este programa converte segundos em horas, minutos e segundos.</p>
+            <pre>
+# Código em Python
+total_segundos = int(input("Digite o número de segundos: "))
+
+horas = total_segundos // 3600
+minutos = (total_segundos % 3600) // 60
+segundos = total_segundos % 60
+
+print(f"{total_segundos} segundos = {horas}h:{minutos}m:{segundos}s")
+            </pre>
+            <p class="answer">Resposta: O programa converte o total de segundos em horas, minutos e segundos.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>26. Calcular Área do Triângulo</h2>
+            <p>Este programa calcula a área de um triângulo.</p>
+            <pre>
+# Código em Python
+base = float(input("Digite a base do triângulo: "))
+altura = float(input("Digite a altura do triângulo: "))
+
+area = (base * altura) / 2
+print(f"A área do triângulo é: {area}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a área do triângulo usando a fórmula (base * altura) / 2.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>27. Trocar Valores de Variáveis</h2>
+            <p>Este programa troca os valores de duas variáveis.</p>
+            <pre>
+# Código em Python
+x = 45
+y = 10
+
+print(f"Antes da troca: x = {x}, y = {y}")
+
+# Realizando a troca
+x, y = y, x
+
+print(f"Depois da troca: x = {x}, y = {y}")
+            </pre>
+            <p class="answer">Resposta: O programa troca os valores das variáveis x e y.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>28. Gerar Número Aleatório</h2>
+            <p>Este programa gera um número aleatório.</p>
+            <pre>
+# Código em Python
+import random
+
+minimo = int(input("Digite o valor mínimo: "))
+maximo = int(input("Digite o valor máximo: "))
+
+numero_aleatorio = random.randint(minimo, maximo)
+print(f"Número aleatório entre {minimo} e {maximo}: {numero_aleatorio}")
+            </pre>
+            <p class="answer">Resposta: O programa gera um número aleatório dentro do intervalo especificado.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>29. Converter Quilômetros para Milhas</h2>
+            <p>Este programa converte quilômetros em milhas.</p>
+            <pre>
+# Código em Python
+quilometros = float(input("Digite a distância em quilômetros: "))
+milhas = quilometros * 0.621371
+
+print(f"{quilometros} km = {milhas:.2f} milhas")
+            </pre>
+            <p class="answer">Resposta: O programa converte a distância de quilômetros para milhas.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>30. Converter Celsius para Fahrenheit</h2>
+            <p>Este programa converte temperatura de Celsius para Fahrenheit.</p>
+            <pre>
+# Código em Python
+celsius = float(input("Digite a temperatura em Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+
+print(f"{celsius}°C = {fahrenheit}°F")
+            </pre>
+            <p class="answer">Resposta: O programa converte a temperatura de Celsius para Fahrenheit.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>31. Calcular Tempo de Viagem</h2>
+            <p>Este programa calcula o tempo de uma viagem de carro.</p>
+            <pre>
+# Código em Python
+distancia = float(input("Digite a distância a percorrer (em km): "))
+velocidade = float(input("Digite a velocidade média esperada (em km/h): "))
+
+tempo = distancia / velocidade
+horas = int(tempo)
+minutos = int((tempo - horas) * 60)
+
+print(f"Tempo estimado de viagem: {horas} horas e {minutos} minutos")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o tempo de viagem baseado na distância e velocidade média.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>32. Calcular Redução de Vida de Fumante</h2>
+            <p>Este programa calcula quanto tempo de vida um fumante pode perder.</p>
+            <pre>
+# Código em Python
+cigarros_por_dia = int(input("Quantos cigarros você fuma por dia? "))
+anos_fumando = int(input("Por quantos anos você já fumou? "))
+
+total_cigarros = cigarros_por_dia * 365 * anos_fumando
+minutos_perdidos = total_cigarros * 10
+dias_perdidos = minutos_perdidos / (24 * 60)
+
+print(f"Você pode ter perdido aproximadamente {dias_perdidos:.1f} dias de vida")
+            </pre>
+            <p class="answer">Resposta: O programa calcula os dias de vida perdidos baseado no consumo de cigarros.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>33. Calcular Dias de Vida Perdidos</h2>
+            <p>Este programa calcula os dias de vida perdidos por um fumante.</p>
+            <pre>
+# Código em Python
+cigarros_por_dia = int(input("Quantos cigarros você fuma por dia? "))
+anos_fumando = int(input("Por quantos anos você já fumou? "))
+
+# Cada cigarro reduz 10 minutos de vida
+minutos_por_cigarro = 10
+total_cigarros = cigarros_por_dia * 365 * anos_fumando
+total_minutos_perdidos = total_cigarros * minutos_por_cigarro
+dias_perdidos = total_minutos_perdidos / (24 * 60)
+
+print(f"Total de dias de vida perdidos: {int(dias_perdidos)} dias")
+            </pre>
+            <p class="answer">Resposta: O programa calcula os dias de vida perdidos considerando 10 minutos por cigarro.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>34. Calcular Aumento de Salário</h2>
+            <p>Este programa calcula o aumento de um salário baseado em uma porcentagem.</p>
+            <pre>
+# Código em Python
+salario = float(input("Digite o valor do salário atual: R$ "))
+percentual = float(input("Digite o percentual de aumento (%): "))
+
+aumento = salario * (percentual / 100)
+novo_salario = salario + aumento
+
+print(f"Valor do aumento: R$ {aumento:.2f}")
+print(f"Novo salário: R$ {novo_salario:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o valor do aumento e o novo salário.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>35. Converter Horas em Dias</h2>
+            <p>Este programa converte horas em dias e horas.</p>
+            <pre>
+# Código em Python
+total_horas = int(input("Digite o número de horas: "))
+
+dias = total_horas // 24
+horas = total_horas % 24
+
+print(f"{total_horas} horas = {dias} dias e {horas} horas")
+            </pre>
+            <p class="answer">Resposta: O programa converte o total de horas em dias e horas.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>36. Calcular Média de Três Notas</h2>
+            <p>Este programa calcula a média de três notas.</p>
+            <pre>
+# Código em Python
+nota1 = float(input("Digite a primeira nota (0-10): "))
+nota2 = float(input("Digite a segunda nota (0-10): "))
+nota3 = float(input("Digite a terceira nota (0-10): "))
+
+if 0 <= nota1 <= 10 and 0 <= nota2 <= 10 and 0 <= nota3 <= 10:
+    media = (nota1 + nota2 + nota3) / 3
+    print(f"A média das notas é: {media:.2f}")
+else:
+    print("Por favor, digite notas válidas entre 0 e 10")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a média de três notas entre 0 e 10.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>37. Operações Básicas com Dois Números (Parte 1)</h2>
+            <p>Este programa realiza operações básicas com dois números.</p>
+            <pre>
+# Código em Python
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+
+soma = num1 + num2
+diferenca = num1 - num2
+produto = num1 * num2
+
+print(f"Soma: {soma}")
+print(f"Diferença: {diferenca}")
+print(f"Produto: {produto}")
+            </pre>
+            <p class="answer">Resposta: O programa realiza soma, subtração e multiplicação dos números.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>38. Operações Básicas com Dois Números (Parte 2)</h2>
+            <p>Este programa realiza operações básicas incluindo divisão.</p>
+            <pre>
+# Código em Python
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+
+soma = num1 + num2
+diferenca = num1 - num2
+produto = num1 * num2
+if num2 != 0:
+    divisao_inteira = num1 // num2
+    print(f"Soma: {soma}")
+    print(f"Diferença: {diferenca}")
+    print(f"Produto: {produto}")
+    print(f"Divisão inteira: {divisao_inteira}")
+else:
+    print("Não é possível dividir por zero")
+            </pre>
+            <p class="answer">Resposta: O programa realiza operações básicas incluindo divisão inteira.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>39. Calcular Resto da Divisão</h2>
+            <p>Este programa calcula o resto da divisão entre dois números.</p>
+            <pre>
+# Código em Python
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+
+if num2 != 0:
+    resto = num1 % num2
+    print(f"O resto da divisão de {num1} por {num2} é: {resto}")
+else:
+    print("Não é possível dividir por zero")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o resto da divisão entre dois números.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>40. Calcular Potenciação</h2>
+            <p>Este programa calcula a potência entre dois números.</p>
+            <pre>
+# Código em Python
+base = float(input("Digite o primeiro número (base): "))
+expoente = float(input("Digite o segundo número (expoente): "))
+
+resultado = base ** expoente
+print(f"{base} elevado a {expoente} é igual a {resultado}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a potenciação usando o primeiro número como base e o segundo como expoente.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>41. Calcular Funções Trigonométricas</h2>
+            <p>Este programa calcula seno, cosseno e tangente de um ângulo.</p>
+            <pre>
+# Código em Python
+import math
+
+angulo_graus = float(input("Digite o ângulo em graus: "))
+angulo_rad = math.radians(angulo_graus)
+
+seno = math.sin(angulo_rad)
+cosseno = math.cos(angulo_rad)
+tangente = math.tan(angulo_rad)
+
+print(f"Seno: {seno:.4f}")
+print(f"Cosseno: {cosseno:.4f}")
+print(f"Tangente: {tangente:.4f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula as funções trigonométricas básicas do ângulo fornecido.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>42. Calcular Salário Mensal</h2>
+            <p>Este programa calcula o salário mensal baseado nas horas trabalhadas.</p>
+            <pre>
+# Código em Python
+horas_trabalhadas = float(input("Digite a quantidade de horas trabalhadas por mês: "))
+valor_hora = float(input("Digite o valor da hora de trabalho: R$ "))
+
+salario_mensal = horas_trabalhadas * valor_hora
+print(f"Seu salário mensal é: R$ {salario_mensal:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o salário mensal multiplicando as horas trabalhadas pelo valor da hora.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>44. Ativar Modo Noturno</h2>
+            <p>Este programa ativa ou desativa o modo noturno baseado na entrada do usuário.</p>
+            <pre>
+# Código em Python
+resposta = input("Deseja ativar o modo noturno? (sim/não): ").lower()
+
+if resposta == "sim":
+    print("Modo noturno ativado!")
+elif resposta == "não" or resposta == "nao":
+    print("Modo noturno desativado!")
+else:
+    print("Resposta inválida. Por favor, responda 'sim' ou 'não'.")
+            </pre>
+            <p class="answer">Resposta: O programa exibe uma mensagem baseada na escolha do usuário sobre o modo noturno.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>45. Calcular Área e Perímetro do Quadrado</h2>
+            <p>Este programa calcula a área e o perímetro de um quadrado.</p>
+            <pre>
+# Código em Python
+lado = float(input("Digite o tamanho do lado do quadrado: "))
+
+area = lado ** 2
+perimetro = 4 * lado
+
+print(f"Área do quadrado: {area}")
+print(f"Perímetro do quadrado: {perimetro}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a área e o perímetro do quadrado usando o lado fornecido.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>46. Calcular Área e Perímetro da Circunferência</h2>
+            <p>Este programa calcula a área e o perímetro de uma circunferência.</p>
+            <pre>
+# Código em Python
+import math
+
+raio = float(input("Digite o raio da circunferência: "))
+
+area = math.pi * raio ** 2
+perimetro = 2 * math.pi * raio
+
+print(f"Área da circunferência: {area:.2f}")
+print(f"Perímetro da circunferência: {perimetro:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a área e o perímetro da circunferência usando o raio fornecido.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>47. Calcular Perímetro do Triângulo</h2>
+            <p>Este programa calcula o perímetro de um triângulo.</p>
+            <pre>
+# Código em Python
+lado1 = float(input("Digite o primeiro lado do triângulo: "))
+lado2 = float(input("Digite o segundo lado do triângulo: "))
+lado3 = float(input("Digite o terceiro lado do triângulo: "))
+
+perimetro = lado1 + lado2 + lado3
+print(f"O perímetro do triângulo é: {perimetro}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o perímetro do triângulo somando seus três lados.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>48. Encontrar o Sucessor</h2>
+            <p>Este programa exibe o sucessor de um número inteiro.</p>
+            <pre>
+# Código em Python
+numero = int(input("Digite um número inteiro: "))
+sucessor = numero + 1
+
+print(f"O sucessor de {numero} é {sucessor}")
+            </pre>
+            <p class="answer">Resposta: O programa mostra o número sucessor ao número fornecido.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>49. Expressões Matemáticas</h2>
+            <p>Este programa calcula expressões matemáticas complexas.</p>
+            <pre>
+# Código em Python
+# Expressão a) 45 + 15 × 9
+resultado_a = 45 + 15 * 9
+print(f"45 + 15 × 9 = {resultado_a}")
+
+# Expressão b) 42 ÷ 30 (94 + 2) × 6 - 1
+resultado_b = 42 / 30 * (94 + 2) * 6 - 1
+print(f"42 ÷ 30 (94 + 2) × 6 - 1 = {resultado_b}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o resultado das expressões matemáticas seguindo a ordem de precedência.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>50. Expressão Matemática Complexa</h2>
+            <p>Este programa calcula uma expressão matemática específica.</p>
+            <pre>
+# Código em Python
+expressao = 10 % 3 * 10 ** 2 + 1 - 10 * 4 / 2
+print(f"10 % 3 * 10 ** 2 + 1 - 10 * 4 / 2 = {expressao}")
+
+# Vamos calcular passo a passo:
+print("\nPasso a passo:")
+print(f"1. 10 % 3 = {10 % 3}")
+print(f"2. 10 ** 2 = {10 ** 2}")
+print(f"3. 10 * 4 = {10 * 4}")
+print(f"4. 40 / 2 = {40 / 2}")
+print(f"5. 1 * 100 = {1 * 100}")
+print(f"6. 100 + 1 = {100 + 1}")
+print(f"7. 101 - 20 = {101 - 20}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a expressão matemática complexa e mostra o passo a passo.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>51. Calcular Expressão com Variáveis</h2>
+            <p>Este programa calcula o resultado de 2a × 3b com valores específicos.</p>
+            <pre>
+# Código em Python
+a = 3
+b = 5
+
+resultado = 2 * a * 3 * b
+print(f"2a × 3b, onde a = {a} e b = {b}")
+print(f"Resultado: {resultado}")
+
+# Detalhando o cálculo:
+print("\nPasso a passo:")
+print(f"1. 2 × {a} = {2 * a}")
+print(f"2. 3 × {b} = {3 * b}")
+print(f"3. {2 * a} × {3 * b} = {resultado}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula a expressão 2a × 3b com a = 3 e b = 5.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>52. Somar Três Variáveis</h2>
+            <p>Este programa soma três variáveis e exibe o resultado.</p>
+            <pre>
+# Código em Python
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+num3 = float(input("Digite o terceiro número: "))
+
+soma = num1 + num2 + num3
+
+print(f"\nA soma de {num1} + {num2} + {num3} = {soma}")
+            </pre>
+            <p class="answer">Resposta: O programa soma três números fornecidos pelo usuário.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>53. Calcular Aumento Salarial</h2>
+            <p>Este programa calcula o aumento de um salário baseado em uma porcentagem.</p>
+            <pre>
+# Código em Python
+salario = float(input("Digite o salário atual: R$ "))
+percentual = float(input("Digite o percentual de aumento (%): "))
+
+aumento = salario * (percentual / 100)
+novo_salario = salario + aumento
+
+print(f"\nValor do aumento: R$ {aumento:.2f}")
+print(f"Novo salário: R$ {novo_salario:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o valor do aumento e o novo salário após o aumento percentual.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>54. Calcular Desconto em Mercadoria</h2>
+            <p>Este programa calcula o desconto e o preço final de uma mercadoria.</p>
+            <pre>
+# Código em Python
+preco = float(input("Digite o preço da mercadoria: R$ "))
+percentual_desconto = float(input("Digite o percentual de desconto (%): "))
+
+desconto = preco * (percentual_desconto / 100)
+preco_final = preco - desconto
+
+print(f"\nValor do desconto: R$ {desconto:.2f}")
+print(f"Preço a pagar: R$ {preco_final:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o valor do desconto e o preço final a pagar.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>55. Calcular Tempo de Viagem</h2>
+            <p>Este programa calcula o tempo estimado de uma viagem de carro.</p>
+            <pre>
+# Código em Python
+distancia = float(input("Digite a distância a percorrer (em km): "))
+velocidade = float(input("Digite a velocidade média esperada (em km/h): "))
+
+tempo = distancia / velocidade
+horas = int(tempo)
+minutos = int((tempo - horas) * 60)
+
+print(f"\nTempo estimado de viagem: {horas} horas e {minutos} minutos")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o tempo de viagem com base na distância e velocidade média.</p>
+        </div>
+
+        <div class="exercise-card" data-aos="fade-up">
+            <h2>56. Calcular Aluguel de Carro</h2>
+            <p>Este programa calcula o preço a pagar pelo aluguel de um carro.</p>
+            <pre>
+# Código em Python
+km_percorridos = float(input("Digite a quantidade de km percorridos: "))
+dias_aluguel = int(input("Digite a quantidade de dias de aluguel: "))
+
+# Custos
+custo_diaria = 60  # €60 por dia
+custo_km = 0.15    # €0,15 por km
+
+# Cálculo total
+total_diarias = dias_aluguel * custo_diaria
+total_km = km_percorridos * custo_km
+total_pagar = total_diarias + total_km
+
+print(f"\nCusto das diárias: €{total_diarias:.2f}")
+print(f"Custo dos km rodados: €{total_km:.2f}")
+print(f"Total a pagar: €{total_pagar:.2f}")
+            </pre>
+            <p class="answer">Resposta: O programa calcula o valor total do aluguel baseado nos dias e quilômetros rodados.</p>
+        </div>
+
+  
